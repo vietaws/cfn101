@@ -1,0 +1,10 @@
+Resources:
+  Ec2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: t2.micro
+      ImageId: 'ami-0ff89c4ce7de192ea'
+      Tags:
+        - Key: 'Name'
+          Value: !Join [' ', [This, Is, A, Join, Demo]]
+# Read more: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference.html

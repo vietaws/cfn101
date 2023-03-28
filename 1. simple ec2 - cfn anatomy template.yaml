@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: A sample template
+Resources:
+  MyEC2Instance: #An inline comment
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      ImageId: 'ami-0ff89c4ce7de192ea' #Another comment -- This is a Linux AMI
+      InstanceType: t2.micro
+#Ref1: Template anatomy - https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html
+
+#Ref2: EC2 Resource Type - https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html
+
+#Ref3: AWS CFN Resource Reference - https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html
+

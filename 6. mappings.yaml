@@ -1,0 +1,15 @@
+Mappings:
+  RegionMap:
+    us-east-1:
+      HVM64: ami-090fa75af13c156b4
+      HVMG2: ami-0a584ac55a7631c0c
+    ap-southeast-1:
+      HVM64: ami-0ff89c4ce7de192ea
+      HVMG2: ami-0be9df32ae9f92309
+Resources:
+  myEC2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      ImageId: !FindInMap [RegionMap, !Ref 'AWS::Region', HVM64]
+      InstanceType: m1.small
+#Ref: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html

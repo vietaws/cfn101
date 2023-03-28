@@ -1,0 +1,10 @@
+Resources:
+  s3Bucket:
+    Type: AWS::S3::Bucket
+Outputs:
+  BucketName: 
+    Value: !Ref 's3Bucket'
+    Description: "This is a S3 bucket demo"
+
+
+#Ref: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html

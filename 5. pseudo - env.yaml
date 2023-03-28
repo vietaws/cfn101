@@ -1,0 +1,24 @@
+Resources:
+  Ec2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceType: t2.micro
+      ImageId: 'ami-0ff89c4ce7de192ea'
+      SecurityGroups:
+        - !Ref MySecurityGroup
+      Tags:
+        - Key: 'Name'
+          Value: !Join
+            - ''
+            - - 'EC2 Instance for '
+              - !Ref AWS::Region
+  MySecurityGroup:
+    Type: 'AWS::EC2::SecurityGroup'
+    Properties:
+      GroupDescription: Enable SSH access via port 22
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: '22'
+          ToPort: '22'
+          CidrIp: 0.0.0.0/0
+#Ref: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/pseudo-parameter-reference.html
